@@ -98,8 +98,8 @@ Credential 이름에 휴대폰본인인증이라는 이름을 같이 표시해�
 - External Proof
   - JSON Web Token
 - Embedded Proof 
-  - Linked Data Signature
-  - Linked Data Proofs
+  - [Linked Data Signature](https://w3c-dvcg.github.io/ld-signatures)
+  - [Linked Data Proofs]()
   
 서명 방식은 동일하고 지원 항목이 좀 다름.  
 초기에는 간단하게 JWT 쓰는 것이 좋을 것 같음.  
