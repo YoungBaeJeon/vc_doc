@@ -83,15 +83,37 @@ Contents Encryption Algorithm
 ## Verifiable Credentials
 [Reference](https://w3c.github.io/vc-data-model)  
 
+#### Credential Type ###
+| Type name | Type description    |
+|-----------|---------------------|
+|           |                     |
+
+휴대폰본인인증에 대한 VC 가 아니라 각 항목에 대한 VC 가 생성되어야 함.  
+Credential 이름에 휴대폰본인인증이라는 이름을 같이 표시해야 할듯.
+
+#### Credential Subject ####
+각 항목 이름 정의
+
+#### Proofs ####
+- External Proof
+  - JSON Web Token
+- Embedded Proof 
+  - Linked Data Signature
+  - Linked Data Proofs
+  
+서명 방식은 동일하고 지원 항목이 좀 다름.  
+초기에는 간단하게 JWT 쓰는 것이 좋을 것 같음.  
+
+
 
 #### Verifiable Credentials Library
 - Java
-    - [verifiable-credentials-java](https://github.com/TrustNetFI/verifiable-credentials-java)
+    - [verifiable-credentials-java](https://github.com/TrustNetFI/verifiable-credentials-java). jsonld-ld-signature.
 - Node
     - [vc-js](https://github.com/digitalbazaar/vc-js)
 - Swift
 
 
-#### Signature
-
-[ld-signatures-java](https://github.com/WebOfTrustInfo/ld-signatures-java)
+#### Signature library
+- Java
+  - [ld-signatures-java](https://github.com/WebOfTrustInfo/ld-signatures-java)
