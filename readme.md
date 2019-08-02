@@ -132,8 +132,6 @@ issuer(AA) 의 did
 }
 ```
 #### proof ####
-link [proof format](https://w3c.github.io/vc-data-model/#proof-formats)  
-
 - type : 서명 알고리즘
     ```
     "proof":{
@@ -165,6 +163,33 @@ link [proof format](https://w3c.github.io/vc-data-model/#proof-formats)
     }
     ```
 
+###### proof signature ######
+proof 는 JWT 를 사용하여 서명한다.  
+[JWTs](https://w3c.github.io/vc-data-model/#jwt-encoding)  
+```
+{
+  "sub": "did:example:ebfeb1f712ebc6f1c276e12ec21",
+  "jti": "http://example.edu/credentials/3732",
+  "iss": "https://example.com/keys/foo.jwk",
+  "nbf": 1541493724,
+  "iat": 1541493724,
+  "exp": 1573029723,
+  "nonce": "660!6345FSer",
+  "vc": {
+    "@context": [
+      "https://www.w3.org/2018/credentials/v1",
+      "https://www.w3.org/2018/credentials/examples/v1"
+    ],
+    "type": ["VerifiableCredential", "UniversityDegreeCredential"],
+    "credentialSubject": {
+      "degree": {
+        "type": "BachelorDegree",
+        "name": "Bachelor of Science and Arts"
+      }
+    }
+  }
+}
+```
 
 
 
