@@ -104,6 +104,8 @@ Credential 이름에 휴대폰본인인증이라는 이름을 같이 표시해�
 서명 방식은 동일하고 지원 항목이 좀 다름.  
 초기에는 간단하게 JWT 쓰는 것이 좋을 것 같음.  
 
+[비교](https://w3c.github.io/vc-imp-guide/#proofs)
+
 
 
 #### Verifiable Credentials Library
