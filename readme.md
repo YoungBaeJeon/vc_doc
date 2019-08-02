@@ -84,12 +84,9 @@ Contents Encryption Algorithm
 [Reference](https://w3c.github.io/vc-data-model)  
 
 #### id ####
-정보 주체자의 DID 를 표시한다.  
-```
-{
-    "id":"did:meta:0x00000000..2352"
-}
-```
+일단 사용하지 않음  
+
+
 #### type ###
 | Type name              | Type description                     |
 |------------------------|--------------------------------------|
@@ -111,6 +108,7 @@ name, dateOfBirth, gender, natilanlity, mobileNumber, telecom, email
 ```
 {
     "credentialSubject":{
+        "id":"did:meta:0x0000...4983",
         "name":"Jeon, Young-Bae"
     }
 }
@@ -166,15 +164,23 @@ issuer(AA) 의 did
 ###### proof signature ######
 proof 는 JWT 를 사용하여 서명한다.  
 [JWTs](https://w3c.github.io/vc-data-model/#jwt-encoding)  
+
+JWT Hteader
 ```
 {
-  "sub": "did:example:ebfeb1f712ebc6f1c276e12ec21",
-  "jti": "http://example.edu/credentials/3732",
-  "iss": "https://example.com/keys/foo.jwk",
-  "nbf": 1541493724,
-  "iat": 1541493724,
-  "exp": 1573029723,
-  "nonce": "660!6345FSer",
+    "alg":"ES256K", // Fixed ES256K
+    "typ":"JWT",    // Fixed JWT
+    "kid":"did:meta:0x9834...4893#ManagementKey#0x1843..4334#key-1"   // 서명자(AA)의 Key ID
+}
+```
+JWT Payload
+```
+{
+  "sub": "did:example:ebfeb1f712ebc6f1c276e12ec21",     // vc.credentialObject.id
+  "iss": "https://example.com/keys/foo.jwk",            // issuer DID. vc.issuer or vp.holder
+  "nbf": 1541493724,                                    // vc.issuanceData.  UNIX timestamp
+  "exp": 1573029723,                                    // vc.expriationDate. UNIX timestamp
+  "nonce": "660!6345FSer",                              // nonce
   "vc": {
     "@context": [
       "https://www.w3.org/2018/credentials/v1",
