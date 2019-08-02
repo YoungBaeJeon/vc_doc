@@ -83,28 +83,88 @@ Contents Encryption Algorithm
 ## Verifiable Credentials
 [Reference](https://w3c.github.io/vc-data-model)  
 
-#### Credential Type ###
-| Type name | Type description    |
-|-----------|---------------------|
-|           |                     |
+#### id ####
+정보 주체자의 DID 를 표시한다.  
+```
+{
+    "id":"did:meta:0x00000000..2352"
+}
+```
+#### type ###
+| Type name              | Type description                     |
+|------------------------|--------------------------------------|
+| NameCredential         | 휴대폰 본인인증 이름                   |
+| DateOfBirthCredential  | 휴대폰 본인인증 생년월일. 'yyyyMMdd' |
+| GenderCredential       |  휴대폰 본인인증 성별                |
+| NationalityCredential  | 휴대폰 본인인증 내국인/외국인 구분   |
+| MobileNumberCredential | 휴대폰 본인인증 휴대폰번호           |
+| TelecomCredential      | 휴대폰 본인인증 통신사               |
+| EmailCredential        | Email 인증 주소                      |
+```
+{
+    "type":["VerifiableCredential", "NameCredential"]
+}
+```
 
-휴대폰본인인증에 대한 VC 가 아니라 각 항목에 대한 VC 가 생성되어야 함.  
-Credential 이름에 휴대폰본인인증이라는 이름을 같이 표시해야 할듯.
+#### credentialSubject ####
+name, dateOfBirth, gender, natilanlity, mobileNumber, telecom, email
+```
+{
+    "credentialSubject":{
+        "name":"Jeon, Young-Bae"
+    }
+}
+```
 
-#### Credential Subject ####
-각 항목 이름 정의
+#### issuer ####
+issuer(AA) 의 did
+```
+{
+    "issuer":"did:meta:0x00000000..4930"
+}
+```
 
-#### Proofs ####
-- External Proof
-  - JSON Web Token
-- Embedded Proof 
-  - [Linked Data Signature](https://w3c-dvcg.github.io/ld-signatures)
-  - [Linked Data Proofs]()
-  
-서명 방식은 동일하고 지원 항목이 좀 다름.  
-초기에는 간단하게 JWT 쓰는 것이 좋을 것 같음.  
+#### issuanceDate ####
+발행일. 'yyyy-MM-ddTHH:mm:zzZ'
+```
+{
+    "issuanceDate":"2010-01-01T19:73:24+09:00Z"
+}
+```
+#### proof ####
+link [proof format](https://w3c.github.io/vc-data-model/#proof-formats)  
 
-[비교](https://w3c.github.io/vc-imp-guide/#proofs)
+- type : 서명 알고리즘
+    ```
+    "proof":{
+        "type":"EcdsaSecp256k1Signature2019"
+    }
+    ```
+- creator : 서명자의 DID
+    ```
+    "proof":{
+        "creator":"did:meta:0x0000..88483"
+    }
+    ```
+- created : 생성 일자. 'yyyy-MM-ddTHH:mm:zzZ'
+    ```
+    "proof":{
+        "created":"2017-09-23T20:21:34Z"
+    }
+    ```
+- nonce : replay attack 을 막기위한 난수값
+    ```
+    "proof":{
+        "nonce":"2bbgh3dgjg2302d"
+    }
+    ```
+- jws : signature
+    ```
+    "proof":{
+        "jws:"jdau31..bj398ahd"
+    }
+    ```
+
 
 
 
