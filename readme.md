@@ -88,15 +88,15 @@ VC 의 ID
 
 
 #### type ###
-| Type name              | Type description                     |
-|------------------------|--------------------------------------|
-| NameCredential         | 휴대폰 본인인증 이름                   |
-| DateOfBirthCredential  | 휴대폰 본인인증 생년월일. 'yyyyMMdd' |
-| GenderCredential       |  휴대폰 본인인증 성별                |
-| NationalityCredential  | 휴대폰 본인인증 내국인/외국인 구분   |
-| MobileNumberCredential | 휴대폰 본인인증 휴대폰번호           |
-| TelecomCredential      | 휴대폰 본인인증 통신사               |
-| EmailCredential        | Email 인증 주소                      |
+| Type name              | Type description                     | attribute name of credentialSubject  |
+|------------------------|--------------------------------------|--------------------------------------|
+| NameCredential         | 휴대폰 본인인증 이름                   | name |
+| DateOfBirthCredential  | 휴대폰 본인인증 생년월일 | dateOfBirth |
+| GenderCredential       |  휴대폰 본인인증 성별                | gender |
+| NationalityCredential  | 휴대폰 본인인증 내국인/외국인 구분   | nationality |
+| MobileNumberCredential | 휴대폰 본인인증 휴대폰번호           | mobileNumber |
+| TelecomCredential      | 휴대폰 본인인증 통신사               | telecom |
+| EmailCredential        | Email 인증 주소                      | email |
 ```
 {
     "type":["VerifiableCredential", "NameCredential"]
