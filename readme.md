@@ -203,9 +203,9 @@ JWT Payload
 - Java
     - [verifiable-credentials-java](https://github.com/TrustNetFI/verifiable-credentials-java). jsonld-ld-signature.
 - Node
-    - [vc-js](https://github.com/digitalbazaar/vc-js)
+    - [vc-js](https://github.com/digitalbazaar/vc-js). jsonld-ld-signature
 - Swift
-
+    - none
 
 #### Signature library
 - Java
