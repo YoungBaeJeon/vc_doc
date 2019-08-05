@@ -84,7 +84,7 @@ Contents Encryption Algorithm
 [Reference](https://w3c.github.io/vc-data-model)  
 
 #### id ####
-일단 사용하지 않음  
+VC 의 ID  
 
 
 #### type ###
