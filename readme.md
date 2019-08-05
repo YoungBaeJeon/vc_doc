@@ -104,8 +104,10 @@ VC 의 ID
 ```
 
 #### credentialSubject ####
-name, dateOfBirth, gender, nationality, mobileNumber, telecom, email
+name, dateOfBirth, gender, nationality, mobileNumber, telecom, email  
 각 attribute 의 데이터 정의가 필요. (dateOfBirth, gender, nationality, telecom)  
+
+
 ```
 {
     "credentialSubject":{
