@@ -200,13 +200,24 @@ Header
 - Create VC
   - Create vc from jwt.vc
     ```
-      {
-        "@context":["https://w3id.org/credentials/v1"],
-        "type":["VerifiableCredential","NameCredential"],
-        "credentialSubject":{
-          "name":"mansud"
-        }
+    {
+      "@context":["https://w3id.org/credentials/v1"],
+      "type":["VerifiableCredential","NameCredential"],
+      "credentialSubject":{
+        "name":"mansud"
       }
+    }
+    ```
+  - Add id from jwt.jti
+    ```
+    {
+      "@context":["https://w3id.org/credentials/v1"],
+      "type":["VerifiableCredential","NameCredential"],
+      "credentialSubject":{
+        "name":"mansud"
+      },
+      "jti":"http://aa.metadium.com/credential/343"
+    }
     ```
   - Add issuer from jwt.iss
     ```
@@ -216,7 +227,8 @@ Header
         "credentialSubject":{
           "name":"mansud"
         },
-        "issuer":"did:meta:0x3489384932859420"
+        "issuer":"did:meta:0x3489384932859420",
+        "jti":"http://aa.metadium.com/credential/343"
       }
     ```
   - Add issuanceDate to jwt.iat. convert value timestamp => rfc3339
@@ -228,7 +240,8 @@ Header
           "name":"mansud"
         },
         "issuer":"did:meta:0x3489384932859420",
-        "issuanceDate":1565084637
+        "issuanceDate":"2019-08-06T09:39:56Z",
+        "jti":"http://aa.metadium.com/credential/343"
       }
     ```
   - Add expirationDate to jwt.exp. convert value timestamp => rfc3339
@@ -240,8 +253,9 @@ Header
           "name":"mansud"
         },
         "issuer":"did:meta:0x3489384932859420",
-        "issuanceDate":1565084637,
-        "expirationDate":1573724637
+        "issuanceDate":"2019-08-06T09:39:56Z",
+        "expirationDate":"2019-11-14T09:39:56Z",
+        "jti":"http://aa.metadium.com/credential/343"
       }
     ```
   - Add credentialSubject.id to jwt.sub
@@ -255,7 +269,8 @@ Header
         },
         "issuer":"did:meta:0x3489384932859420",
         "issuanceDate":1565084637,
-        "expirationDate":1573724637
+        "expirationDate":1573724637,
+        "jti":"http://aa.metadium.com/credential/343"
       }
     ```
 
