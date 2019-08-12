@@ -77,7 +77,7 @@ Contents Encryption Algorithm
     - [node-jose](https://github.com/cisco/node-jose). Not supported secp256k1.
     - [@panva/jose](https://github.com/panva/jose). Supported secp256k1 (ECDSA).
 - Swift
-    - [JOSESwift](https://github.com/airsidemobile/JOSESwift). Not supported secp256k1.
+    - [JOSESwift](https://github.com/airsidemobile/JOSESwift). Not supported secp256k1. **<= base iOS crypto**
 
 
 ## Verifiable Credentials
