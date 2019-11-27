@@ -1,6 +1,6 @@
-# Verifiable Credential Encode/decode
+# Verifiable Credential to JWT Encode/decode
 
-## Encoding
+## JWT Encoding
 
 ##### Verifiable Credential JSON
 ```json
@@ -177,7 +177,7 @@ Header
 }
 ```
 
-## Decoding
+## JWT Decoding
 - JWTs Verify
 - Get JWT
   ```
